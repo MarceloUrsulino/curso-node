@@ -1,0 +1,15 @@
+{
+  "name": "5_modulos-externos",
+  "version": "1.0.0",
+  "description": "Estudos sobre npm",
+  "license": "ISC",
+  "author": "Marcelo Ursulino",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "minimist": "^1.2.8"
+  }
+}
