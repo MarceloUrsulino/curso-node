@@ -53,7 +53,7 @@ function add(){
             return add()
         }
         fs.writeFileSync(`movies/${movieName}.json`, '{"watched": false}', )
-        
+
         console.log(chalk.bgBlue(`Seu filme ${movieName}, foi adicionado na sua lista.`))
         operation()
 
