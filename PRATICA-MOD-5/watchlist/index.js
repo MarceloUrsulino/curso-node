@@ -52,11 +52,9 @@ function add(){
             console.log(chalk.bgRed.black('Esse filme já está na lista!'))
             return add()
         }
-        fs.writeFileSync(`movies/${movieName}.json`, '{"watched": false}', function(err){
-         console.log(err)
-
-        })
-        console.log(chalk.bgBlue(`Seu filme ${movieName}, foi adcionado na sua lista.`))
+        fs.writeFileSync(`movies/${movieName}.json`, '{"watched": false}', )
+        
+        console.log(chalk.bgBlue(`Seu filme ${movieName}, foi adicionado na sua lista.`))
         operation()
 
     })
@@ -125,5 +123,33 @@ function getMovie(movieName){
     return JSON.parse(movieJSON)
 }
 
+// function remove
 
- 
+function remove(){
+    inquirer.prompt([
+        {
+            name:'movieRemove',
+            message:'Qual filme você deseja remover?',
+        }
+    ]).then((answer) =>{
+
+        const movieRemove = answer['movieRemove']
+
+        if(!checkmovie(movieRemove)){
+             return remove()
+        }
+        fs.unlinkSync(`movies/${movieRemove}.json`)
+            console.log(chalk.bgBlue(`O filme ${movieRemove} foi removido da sua lista.`))
+        
+        operation()
+    })
+    .catch(err => console.log(err))
+}
+
+
+
+
+
+
+
+
