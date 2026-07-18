@@ -93,7 +93,7 @@ app.post('/users/update/', async (req,res) => {
     // Segundo parâmetro: a condição de qual registro atualizar (where id = id)
     // "await" pausa a execução até o Sequelize confirmar que salvou no banco
     await User.update(userData, { where: {id: id }})
-    
+
      // Depois de atualizar, redireciona o usuário de volta para a página inicial
     res.redirect('/')
 })
@@ -106,7 +106,10 @@ app.get('/', async (req, res) => {
     res.render('home', {users: users})
 }) 
 
-conn.sync().then(() =>{
+conn
+.sync()
+//.sync({force: true})
+.then(() =>{
     app.listen(3000)
 }).catch(err =>{
     console.log(err)
