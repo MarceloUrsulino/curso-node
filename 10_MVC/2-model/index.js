@@ -44,9 +44,9 @@ app.use(express.json())
 app.use(express.static('public'))
 
 // Inicia o servidor, deixando ele "escutando" requisições na porta 3000
-app.listen(3000)
+//app.listen(3333)
 
 conn.sync()
  .then(() =>{
-    app.listen(3000)
+    app.listen(3333)
 }).catch((err) => console.log(err))
