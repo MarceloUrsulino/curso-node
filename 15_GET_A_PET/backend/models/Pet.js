@@ -10,7 +10,7 @@ const Pet = mongoose.model(
             required: true
           },
           age: {
-            type: number,
+            type: Number,
             required: true
           },
           weight: {
@@ -18,7 +18,7 @@ const Pet = mongoose.model(
             required: true
           },
           color: {
-            type: Number,
+            type: String,
             required: true
           },
           images: {
@@ -30,7 +30,7 @@ const Pet = mongoose.model(
           },
           user: Object,
           adopter: Object
-          
+
         },{timestamps: true},
     )
 )
