@@ -36,6 +36,10 @@ module.exports = class UserController{
             res.status(422).json({message: 'Por favor, utilize outro e-mail.'})
             return
         }
+        //Create a password
+        const salt = await bcrypt.genSalt(12)
+        const passwordHash = await bcrypt.hash(password, salt)
+
     }
     
 }
